@@ -1,0 +1,177 @@
+::placeholder {
+  color: rgb(from var(--foreground) r g b / .5);
+}
+
+fieldset {
+  border: 1px var(--accent) solid;
+  border-radius: 6px;
+  margin: 0;
+  margin-bottom: 12px;
+  padding: 10px;
+}
+
+legend {
+  font-size: .9em;
+  font-weight: 600;
+}
+
+button,
+::file-selector-button,
+select,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="checkbox"],
+input[type="range"],
+input[type="radio"] {
+  cursor: pointer;
+}
+
+input,
+select {
+  display: block;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: initial;
+}
+
+input,
+button,
+::file-selector-button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+
+  background: var(--darker);
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+
+input[type="file"] {
+  background: inherit;
+  border: 1px var(--border) solid;
+}
+
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  background: var(--darker);
+  padding-inline: 2em;
+
+  &:hover {
+    background: color-mix(in srgb, var(--darker) 70%, var(--accent));
+  }
+}
+
+::file-selector-button:hover {
+  background: color-mix(in srgb, var(--darker) 70%, var(--accent));
+
+  transition:
+    background-color .1s linear;
+}
+
+input[type="color"] {
+  min-height: 2rem;
+  padding: 8px;
+  cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  height: 1.1em;
+  width: 1.1em;
+}
+
+input[type="radio"] {
+  border-radius: 100%;
+}
+
+input {
+  vertical-align: top;
+}
+
+label {
+  vertical-align: middle;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+input[type="range"],
+select,
+button,
+textarea {
+  appearance: none;
+}
+
+textarea {
+  box-sizing: border-box;
+  display: block;
+  resize: vertical;
+
+  &:not([cols]) {
+    width: 100%;
+  }
+
+  &:not([rows]) {
+    height: 140px;
+    min-height: 40px;
+  }
+}
+
+select {
+  background: var(--darker);
+}
+
+select[multiple] {
+  overflow-y: auto;
+  padding-inline-end: 10px;
+}
+
+input,
+select,
+button,
+textarea {
+  margin-bottom: 4px;
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
+
+  &[readonly] {
+    cursor: text;
+  }
+
+  &:focus,
+  &:hover {
+    transition:
+      background-color .1s linear,
+      border-color .1s linear,
+      color .1s linear,
+      box-shadow .1s linear,
+      transform .1s ease;
+  }
+}
+
+button,
+input[type="checkbox"],
+input[type="radio"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="range"] {
+  &:active {
+    transform: translateY(2px);
+  }
+}
