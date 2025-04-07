@@ -1,0 +1,83 @@
+html,
+body {
+  background: var(--background);
+  height: 100%;
+  margin: 0;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  color: var(--foreground);
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  text-rendering: optimizeLegibility;
+
+  > header,
+  > main,
+  > footer {
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 1em;
+  }
+
+  > header,
+  > footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    color: rgb(from var(--foreground) r g b / .8);
+    text-align: center;
+
+    background: var(--banner);
+  }
+
+  > header {
+    border-bottom: 1px solid var(--border);
+  }
+
+  > main {
+    margin: 0 auto auto;
+    transition: width .2s ease;
+  }
+
+  > footer {
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 768px) {
+    > main {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    > main {
+      width: 640px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    > main {
+      width: 768px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    > main {
+      width: 1024px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    > main {
+      width: 1280px;
+    }
+  }
+}
+
