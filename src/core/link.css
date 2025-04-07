@@ -1,0 +1,18 @@
+a {
+  color: color-mix(in srgb, var(--accent) 75%, light-dark(black, white));
+  text-decoration: none;
+  text-decoration-style: dashed;
+  transition:
+    transform .2s ease;
+
+  &:hover {
+    color: color-mix(in srgb, var(--accent) 85%, light-dark(black, white));
+    text-decoration: underline;
+    transform: translateY(-2px);
+  }
+
+  & > code,
+  & > strong {
+    color: inherit;
+  }
+}
