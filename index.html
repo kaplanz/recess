@@ -11,6 +11,8 @@
 
   <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="src/main.css" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ddf2d1" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#223b52" />
 </head>
 
 <body>
@@ -29,6 +31,56 @@
     </section>
 
     <hr />
+
+    <section>
+      <h2>Colours</h2>
+      <p>
+        The following colours are provided as presets.
+      </p>
+      <div id="colors">
+        <div title="red"></div>
+        <div title="orange"></div>
+        <div title="yellow"></div>
+        <div title="green"></div>
+        <div title="mint"></div>
+        <div title="teal"></div>
+        <div title="cyan"></div>
+        <div title="blue"></div>
+        <div title="indigo"></div>
+        <div title="purple"></div>
+        <div title="pink"></div>
+        <div title="brown"></div>
+      </div>
+      <style>
+        #colors {
+          display: grid;
+          gap: 1em;
+          grid-auto-flow: column;
+          grid-auto-columns: 30px;
+          grid-template-rows: repeat(2, 30px);
+          padding: 1em;
+
+          > div {
+            aspect-ratio: 1;
+            border-radius: 25%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
+            &[title="red"]    { background: var(--red)    }
+            &[title="orange"] { background: var(--orange) }
+            &[title="yellow"] { background: var(--yellow) }
+            &[title="green"]  { background: var(--green)  }
+            &[title="mint"]   { background: var(--mint)   }
+            &[title="teal"]   { background: var(--teal)   }
+            &[title="cyan"]   { background: var(--cyan)   }
+            &[title="blue"]   { background: var(--blue)   }
+            &[title="indigo"] { background: var(--indigo) }
+            &[title="purple"] { background: var(--purple) }
+            &[title="pink"]   { background: var(--pink)   }
+            &[title="brown"]  { background: var(--brown)  }
+          }
+        }
+      </style>
+    </section>
 
     <section>
       <h2>Element demos</h2>

@@ -1,11 +1,11 @@
 a {
-  color: color-mix(in srgb, var(--accent) 75%, light-dark(black, white));
+  color: color-mix(in oklch, var(--accent) 90%, white);
   text-decoration-line: none;
   transition:
     transform .2s ease;
 
   &:hover {
-    color: color-mix(in srgb, var(--accent) 85%, light-dark(black, white));
+    color: color-mix(in oklch, var(--accent) 70%, white);
     text-decoration-line: underline;
     text-decoration-style: wavy;
     text-decoration-thickness: .1em;

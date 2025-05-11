@@ -7,17 +7,30 @@
    */
   color-scheme: light dark;
   accent-color: var(--accent);
-  /* Basic */
-  --background: light-dark(#f8f9fa, #212529);
-  --foreground: light-dark(#343a40, #dee2e6);
-  /* Areas */
-  --banner: light-dark(#e9ecef, #343a40);
+  /* Palette */
+  --red:    light-dark(rgb(255, 059, 048), rgb(255, 069, 058));
+  --orange: light-dark(rgb(255, 149, 000), rgb(255, 159, 010));
+  --yellow: light-dark(rgb(255, 204, 010), rgb(255, 214, 010));
+  --green:  light-dark(rgb(052, 199, 089), rgb(048, 209, 088));
+  --mint:   light-dark(rgb(000, 199, 190), rgb(099, 230, 226));
+  --teal:   light-dark(rgb(048, 176, 199), rgb(064, 200, 224));
+  --cyan:   light-dark(rgb(050, 173, 230), rgb(100, 210, 255));
+  --blue:   light-dark(rgb(000, 122, 255), rgb(010, 132, 255));
+  --indigo: light-dark(rgb(088, 086, 214), rgb(094, 092, 230));
+  --purple: light-dark(rgb(175, 082, 222), rgb(191, 090, 242));
+  --pink:   light-dark(rgb(255, 045, 085), rgb(255, 055, 095));
+  --brown:  light-dark(rgb(162, 132, 094), rgb(172, 142, 104));
+  /* Accent */
+  --accent: light-dark(#b3063e, #ff245a);
+  /* Primary */
+  --background: light-dark(#fafaf3, #151a1f);
+  --foreground: light-dark(#223b52, #f3f3e4);
   /* Layer */
-  --darken: color-mix(in srgb, var(--background) 95%, var(--foreground));
-  --darker: color-mix(in srgb, var(--background) 90%, var(--foreground));
-  /* Extra */
-  --accent: #15aabf;
-  --border: #adb5bd;
-  --marker: #efdb43;
+  --darken: color-mix(in srgb, var(--background) 95%, light-dark(black, white));
+  --darker: color-mix(in srgb, var(--background) 90%, light-dark(black, white));
+  /* Features */
+  --banner: light-dark(#ddf2d1, #223b52);
+  --border: var(--accent);
+  --marker: var(--yellow);
   --shadow: #112233;
 }
