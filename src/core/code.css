@@ -9,10 +9,10 @@ time {
 
 code,
 kbd,
-samp,
-time {
-  background: var(--darker);
+samp {
+  background: var(--darken);
   border-radius: 6px;
+  box-shadow: 1.5px 2px var(--shadow);
   padding: 2.5px 4px;
 }
 

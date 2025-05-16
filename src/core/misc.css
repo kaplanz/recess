@@ -16,18 +16,17 @@ hr {
 }
 
 table {
-  border-collapse: collapse;
+  border: 1px solid var(--border);
+  border-collapse: separate;
+  border-spacing: 0;
   border-radius: 6px;
   margin-bottom: 10px;
   overflow: hidden;
+  white-space: nowrap;
   width: 100%;
 
   caption {
     text-align: start;
-  }
-
-  tr:hover {
-    filter: brightness(.95);
   }
 
   thead {
@@ -46,21 +45,35 @@ table {
   }
 
   tbody {
-    tr:nth-child(odd) {
+    tr:nth-child(even) {
       background: var(--darken);
     }
-    tr:nth-child(even) {
-      background: var(--background);
+    tr:nth-child(odd) {
+      background: var(--backgd);
+    }
+    tr:hover {
+      background: color-mix(in srgb, var(--darker) 95%, var(--accent));
     }
   }
 
-  td,
-  th {
+  th,
+  td {
     cursor: cell;
     padding: 8px;
     text-align: start;
-    vertical-align: top;
-    word-wrap: break-word;
+    vertical-align: middle;
+
+    max-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:first-child {
+      padding-inline-start: 1em;
+    }
+    &:last-child {
+      padding-inline-end: 1em;
+    }
   }
 }
 
@@ -98,10 +111,11 @@ details {
 }
 
 dialog {
-  background: var(--background);
-  border: none;
+  background: var(--backgd);
+  border-width: 2px;
   border-radius: 6px;
   border-color: var(--border);
+  box-shadow: 6px 8px var(--shadow);
   padding: 10px 30px;
 
   & > header:first-child {
@@ -113,7 +127,7 @@ dialog {
   }
 
   &::backdrop {
-    background: #0000009c;
+    background: oklch(0% 0 0 / .2);
     backdrop-filter: blur(1px);
   }
 }
