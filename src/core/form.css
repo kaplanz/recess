@@ -36,12 +36,6 @@ select {
   display: block;
 }
 
-[type="checkbox"],
-[type="radio"] {
-  display: initial;
-}
-
-
 input:not([type="file"]),
 select,
 button,
@@ -80,6 +74,10 @@ textarea {
     --shadow: oklch(from var(--accent) l c h / .4);
   }
 
+  &:checked {
+    --border: var(--accent);
+  }
+
   &:disabled {
     cursor: not-allowed;
     opacity: .5;
@@ -116,8 +114,35 @@ input[type="color"] {
 
 input[type="checkbox"],
 input[type="radio"] {
-  height: 1.1em;
-  width: 1.1em;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+
+  width: 1.25em;
+  height: 1.25em;
+
+  &:checked::before {
+    display: block;
+    content: "";
+
+    position: absolute;
+    inset: 10%;
+
+    height: 80%;
+    width: 80%;
+
+    background: var(--border);
+  }
+}
+
+input[type="checkbox"]:checked::before {
+  mask: var(--check) center center / 100% auto no-repeat;
+}
+
+input[type="radio"]:checked::before {
+  border-radius: 100%;
+  border: 1px solid var(--backgd);
+  box-sizing: border-box;
 }
 
 input[type="radio"] {
@@ -125,13 +150,11 @@ input[type="radio"] {
 }
 
 input {
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 label {
   vertical-align: middle;
-  margin-bottom: 4px;
-  display: inline-block;
 }
 
 input:not([type="checkbox"]):not([type="radio"]),

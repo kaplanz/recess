@@ -33,4 +33,9 @@
   --border: var(--accent);
   --marker: var(--yellow);
   --shadow: light-dark(oklch(0% 0 0 / .2), oklch(40% 0 0 / .2));
+
+  /*
+   * Shapes
+   */
+  --check: url('data:image/svg+xml;utf8,<svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9L7 15" stroke="black" stroke-width="4" stroke-linecap="round" /><path d="M7 15L17 2" stroke="black" stroke-width="4" stroke-linecap="round" /></svg>');
 }
